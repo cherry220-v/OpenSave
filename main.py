@@ -28,7 +28,7 @@ def initAPI(api):
                     view = self.window.newFile()
                     view.setFile(file)
                     self.window.setTitle(self.os.path.normpath(file))
-                    view.setTitle(self.os.path.basename(file or "Untitled"))
+                    view.setTitle(self.os.path.basename(file))
                     self.fileReader = FileReadThread(file, self)
                     self.fileReader.line_read.connect(view.insert)
                     self.fileReader.start()
@@ -84,6 +84,7 @@ def initAPI(api):
                 writeThread = FileWriteThread(f, text)
                 writeThread.start()
                 writeThread.wait()
+                view.setTitle(self.os.path.basename(f))
                 view.setSaved(True)
             except Exception as e:
                 self.window.setLogMsg(e)
