@@ -1,0 +1,43 @@
+{
+  "mainMenu": [
+    {
+      "id": "file",
+      "children": [
+        {
+          "caption": "Open file",
+          "command": {
+            "command": "OpenFileCommand",
+            "kwargs": {
+              "dlg": true
+            }
+          },
+          "shortcut": "ctrl+o"
+        },
+        {
+          "caption": "Save file",
+          "command": {
+            "command": "SaveFileCommand"
+          },
+          "shortcut": "ctrl+s"
+        },
+        {
+          "caption": "Save file as",
+          "command": {
+            "command": "SaveFileCommand",
+            "kwargs": {
+              "dlg": true
+            }
+          },
+          "shortcut": "ctrl+shift+s"
+        },
+        {
+          "caption": "Open recent file",
+          "command": {
+            "command": "OpenRFileCommand"
+          },
+          "shortcut": "ctrl+shift+t"
+        }
+      ]
+    }
+  ]
+}
