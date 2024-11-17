@@ -84,7 +84,7 @@ def initAPI(api):
                 writeThread = FileWriteThread(f, text)
                 writeThread.start()
                 writeThread.wait()
-                view.setTitle(self.os.path.basename(f))
+                self.window.setTitle(self.os.path.basename(f))
                 view.setSaved(True)
             except Exception as e:
                 self.window.setLogMsg(e)
