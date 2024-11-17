@@ -27,6 +27,7 @@ def initAPI(api):
                 if not found:
                     view = self.window.newFile()
                     view.setFile(file)
+                    self.window.setTitle(self.os.path.normpath(file))
                     view.setTitle(self.os.path.basename(file or "Untitled"))
                     self.fileReader = FileReadThread(file, self)
                     self.fileReader.line_read.connect(view.insert)
