@@ -152,4 +152,3 @@ def initAPI(api):
             recentFiles.close()
 
     VtAPI.activeWindow.signals.tabClosed.connect(lambda view: addToRFiles(view, VtAPI))
-    VtAPI.activeWindow.registerCommandClass({"command": OpenRFileCommand, "shortcut": "ctrl+shift+t"})
